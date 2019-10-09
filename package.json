@@ -14,18 +14,28 @@
   },
   "author": "Israel kusayev",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "devDependencies": {
     "@types/eslint": "^6.1.2",
     "@types/express": "^4.17.1",
     "@typescript-eslint/eslint-plugin": "^2.3.3",
     "@typescript-eslint/parser": "^2.3.3",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^3.0.8",
     "nodemon": "^1.19.3",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
     "ts-node": "^8.4.1",
     "ts-node-dev": "^1.0.0-pre.43",
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "eslint": "^6.5.1",
     "express": "^4.17.1"
   }
 }
