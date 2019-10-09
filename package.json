@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm run serve",
+    "start": "yarn serve",
     "serve": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
-    "build": "npm run build-ts && npm run lint",
+    "build": "yarn build-ts && yarn lint",
     "build-ts": "tsc",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
