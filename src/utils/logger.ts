@@ -1,5 +1,7 @@
 import winston from 'winston';
 
+const logFolder = 'logs';
+
 const options: winston.LoggerOptions = {
   transports: [
     new winston.transports.Console({
@@ -12,10 +14,10 @@ const options: winston.LoggerOptions = {
     // - Write all logs error (and below) to `error.log`.
     //
 
-    new winston.transports.File({ filename: 'error.log', level: 'error' }),
-    new winston.transports.File({ filename: 'combined.log' })
+    new winston.transports.File({ filename: logFolder + '/error.log', level: 'error' }),
+    new winston.transports.File({ filename: logFolder + '/combined.log' })
   ],
-  exceptionHandlers: [new winston.transports.File({ filename: 'exceptions.log' })]
+  exceptionHandlers: [new winston.transports.File({ filename: logFolder + '/exceptions.log' })]
 };
 
 const logger = winston.createLogger(options);
