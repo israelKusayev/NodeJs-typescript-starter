@@ -1,30 +1,28 @@
 import express from 'express';
-import { userService } from '../../services';
+import * as jwtService from '../../services/jwtService';
+import { userManager } from '../../managers';
+
 const router = express.Router();
 
 /**
- * POST /api/auth/login
+ * POST /api/auth/refreshToken
  * Public
- * Login with username and password
+ * return new access and refresh tokens
  */
-router.post('/login', async function(req, res) {
-  const { email, password }: { email: string; password: string } = req.body;
+router.post('/refreshToken', async (req, res) => {
+  try {
+    const decoded = jwtService.validateRefreshToken(req.body.refreshToken);
 
-  // Simple validation
-  if (!email || !password) return res.status(400).json({ msg: 'all fields are required' });
+    if (!decoded) return res.status(401).end();
+    const user = await userManager.getUserById(decoded.id);
 
-  // Check for existing user
-  const user = await userService.getUserByEmail(email);
-  if (!user) return res.status(400).json({ msg: 'username does not exist' });
+    // Create tokens
+    const [accessToken, refreshToken] = jwtService.generateAuthTokens(user);
 
-  //   // Validate password
-  //   const valid = await user.comparePassword(password);
-  //   if (!valid) return res.status(400).json({ msg: 'invalid password' });
-
-  //   // Create token
-  //   const tokens = await user.generateAuthTokens();
-  return res.json({ msg: 'hii' });
-  //   return res.status(200).json({ accessToken: tokens[0], refreshToken: tokens[1] });
+    res.status(200).json({ accessToken, refreshToken });
+  } catch {
+    res.status(401).end();
+  }
 });
 
 export default router;

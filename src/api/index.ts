@@ -3,10 +3,11 @@ import cors from 'cors';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import compression from 'compression';
-import 'express-async-errors'; // handle all async errors and send them to error middleware.*asts
+import 'express-async-errors'; // handle all async errors and send them to error middleware.
 
 import errorMiddleware from './middlewares/error';
 import authRouter from './routes/auth';
+import userRouter from './routes/user';
 
 function initMiddlewares(app: express.Application) {
   // Enable Cross Origin Resource Sharing to all origins by default
@@ -28,6 +29,7 @@ function initMiddlewares(app: express.Application) {
 function initRoutes(app: express.Application) {
   initMiddlewares(app);
   app.use('/api/auth', authRouter);
+  app.use('/api/user', userRouter);
   app.use(errorMiddleware);
 }
 

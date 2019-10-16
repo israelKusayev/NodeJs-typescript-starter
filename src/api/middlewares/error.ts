@@ -1,6 +1,7 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import logger from '../../utils/logger';
-import { NextFunction } from 'connect';
+
+// Error middleware
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function(err: any, req: Request, res: Response, next: NextFunction) {
