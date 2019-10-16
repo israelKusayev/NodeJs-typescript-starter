@@ -7,7 +7,7 @@ declare namespace NodeJS {
     PORT?: string;
     ACCESS_TOKEN_SECRET_KEY: string;
     REFRESH_TOKEN_SECRET_KEY: string;
-    ACCESS_TOKEN_EXPIRES_IN: string | number;
-    REFRESH_TOKEN_EXPIRES_IN: string | number;
+    ACCESS_TOKEN_EXPIRES_IN: string;
+    REFRESH_TOKEN_EXPIRES_IN: string;
   }
 }
