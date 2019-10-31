@@ -29,7 +29,7 @@
     "@types/helmet": "^0.0.44",
     "@types/jsonwebtoken": "^8.3.4",
     "@types/morgan": "^1.7.37",
-    "@types/node": "^12.7.12",
+    "@types/node": "^12.12.3",
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^2.3.3",
     "@typescript-eslint/parser": "^2.3.3",
