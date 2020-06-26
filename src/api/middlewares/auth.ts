@@ -1,5 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
+
 import { getTokenFromHeader } from './../../utils/common';
 
 // Authentication middleware

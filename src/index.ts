@@ -1,7 +1,9 @@
-import express from 'express';
-import logger from './utils/logger';
-import routes from './api';
 import './config/env';
+
+import express from 'express';
+
+import routes from './api';
+import logger from './utils/logger';
 
 const app = express();
 routes(app);

@@ -1,5 +1,5 @@
-import { Request } from 'express';
 import bcrypt from 'bcryptjs';
+import { Request } from 'express';
 
 export const getTokenFromHeader = (req: Request) => {
   if (

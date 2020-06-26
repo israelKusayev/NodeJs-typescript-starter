@@ -1,6 +1,7 @@
 import express from 'express';
-import * as jwtService from '../../services/jwtService';
+
 import { userManager } from '../../managers';
+import * as jwtService from '../../services/jwtService';
 
 const router = express.Router();
 

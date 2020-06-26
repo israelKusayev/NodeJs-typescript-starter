@@ -1,9 +1,10 @@
-import express from 'express';
-import cors from 'cors';
-import morgan from 'morgan';
-import helmet from 'helmet';
-import compression from 'compression';
 import 'express-async-errors'; // handle all async errors and send them to error middleware.
+
+import compression from 'compression';
+import cors from 'cors';
+import express from 'express';
+import helmet from 'helmet';
+import morgan from 'morgan';
 
 import errorMiddleware from './middlewares/error';
 import authRouter from './routes/auth';

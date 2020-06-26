@@ -1,5 +1,6 @@
-import express from 'express';
 import bcrypt from 'bcryptjs';
+import express from 'express';
+
 import { userManager } from '../../managers';
 import * as jwtService from '../../services/jwtService';
 
@@ -15,7 +16,7 @@ router.post('/login', async function (req, res) {
 
   // Simple validation
   if (!email || !password) return res.status(400).json({ msg: 'all fields are required' });
-
+  [];
   // Check for existing user
   const user = await userManager.getUserByEmail(email);
   if (!user) return res.status(400).json({ msg: 'user does not exist' });

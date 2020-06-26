@@ -1,13 +1,13 @@
 import jwt from 'jsonwebtoken';
 
-export const generateAccessToken = (payload: string | object, options?: jwt.SignOptions) => {
+export const generateAccessToken = (payload: string | Record<string, any>, options?: jwt.SignOptions) => {
   return jwt.sign(payload, process.env.ACCESS_TOKEN_SECRET_KEY, {
     expiresIn: process.env.ACCESS_TOKEN_EXPIRES_IN,
     ...options
   });
 };
 
-export const generateRefreshToken = (payload: string | object, options?: jwt.SignOptions) => {
+export const generateRefreshToken = (payload: string | Record<string, any>, options?: jwt.SignOptions) => {
   return jwt.sign(payload, process.env.REFRESH_TOKEN_SECRET_KEY, {
     expiresIn: process.env.REFRESH_TOKEN_EXPIRES_IN,
     ...options
