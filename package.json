@@ -10,7 +10,9 @@
     "build": "yarn build-ts && yarn lint",
     "build-ts": "tsc",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --maxWorkers=1 --detectOpenHandles --verbose --forceExit",
+    "test:prod": "yarn jest",
+    "test:watch": "yarn test --watchAll",
     "prettier:fix": "prettier --write src/**/*"
   },
   "author": "Israel kusayev",
