@@ -3,7 +3,7 @@ import jwt from 'jsonwebtoken';
 import { getTokenFromHeader } from './../../utils/common';
 
 // Authentication middleware
-export default function(req: Request, res: Response, next: NextFunction) {
+export default function (req: Request, res: Response, next: NextFunction) {
   const token = getTokenFromHeader(req);
 
   // Check for token
